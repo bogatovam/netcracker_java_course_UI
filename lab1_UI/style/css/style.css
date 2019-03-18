@@ -20,6 +20,9 @@
 .history_table_th {
 	background: #ccddff;
 }
+.history_table tr:hover td {
+	background: #9ebeff;
+}
 .history_table tr:nth-child(even) {
 	background: #ccddff;
 }

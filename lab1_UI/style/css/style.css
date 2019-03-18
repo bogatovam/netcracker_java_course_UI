@@ -20,10 +20,7 @@
 .history_table_th {
 	background: #ccddff;
 }
-.history_table_tr:hover .history_table_td {
-	background: #9ebeff;
-}
-.history_table_tr:nth-child(even) {
+.history_table tr:nth-child(even) {
 	background: #ccddff;
 }
 .button {

@@ -1,7 +1,8 @@
 $(document).ready(function() {
 	$("#q_equation").on("submit", calculate);
 	$("tr").on('click', delRow);
-	$("th").addClass("history_table_th");
+	$("#tab1").children().eq(1).addClass("history_table_th");
+	//$("th").addClass("history_table_th");
 	$("tr").addClass("history_table_tr");
 });
 
@@ -13,7 +14,7 @@ function delRow(event) {
 function saveInTable(coeffs, result) {
 	var newRow = document.createElement("tr");
 	$("#tab1").append(newRow);
-
+	newRow.class = "history_table_tr";
 	for(var i = coeffs.length - 1; i > -1; --i){
 		var newCell = newRow.insertCell();
 		newCell.class = "history_table_td";

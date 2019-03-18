@@ -77,7 +77,8 @@ function calculate(event) {
 		if(isNaN(d)){
 			console.log("Quadratic equation has no real roots" + "sqrt(" + 
 			coeffs[1]+"*"+coeffs[1] +"-"+ 4+"*"+coeffs[2]+"*"+coeffs[0]+") < 0")
-			$("#help_message").text("Quadratic equation has no real roots");
+			$("#help_message").html("Quadratic equation has no real roots:<br>" + "sqrt(" + 
+			coeffs[1]+"*"+coeffs[1] +"-"+ 4+"*"+coeffs[2]+"*"+coeffs[0]+") < 0");
 			return;
 		} else if(d == 0) {
 			result[0] = (-coeffs[1] / (2*coeffs[2])).toFixed(5);

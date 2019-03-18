@@ -1,6 +1,8 @@
 $(document).ready(function() {
 	$("#q_equation").on("submit", calculate);
 	$("tr").on('click', delRow);
+	$("th").addClass("history_table_th");
+	$("tr").addClass("history_table_tr");
 });
 
 function delRow(event) {
@@ -14,14 +16,17 @@ function saveInTable(coeffs, result) {
 
 	for(var i = coeffs.length - 1; i > -1; --i){
 		var newCell = newRow.insertCell();
+		newCell.class = "history_table_td";
 		newCell.value = coeffs[i];
 		newCell.innerText = coeffs[i];
 	}
 	for(var i = 0; i < result.length; ++i){
 		var newCell = newRow.insertCell();
+		newCell.class = "history_table_td";
 		newCell.value = result[i];
 		newCell.innerText = result[i];
 	}
+	newRow.class = "history_table_tr";
 	newRow.addEventListener('click', delRow, false);
 }
 
@@ -35,12 +40,14 @@ function validationOfValues(coeffs) {
 	for(var i = 0; i < coeffs.length; ++i) {
 		if(!isValideNumber(coeffs[i].val())) {
 			coeffs[i].addClass("badValue");
+			console.log("["+i + "] coefficient " + coeffs[i].val() + " has incorrect value")
 			res = false;
 		} else coeffs[i].addClass("goodValue");
 	}
 	if(coeffs[2].val() == "0") {
+		console.log("The equation should be square, coefficient А is zero")
 		coeffs[2].addClass("badValue");
-		res = false;
+		res = false;;
 	}
 	return res;
 }

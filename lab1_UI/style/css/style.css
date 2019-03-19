@@ -70,7 +70,7 @@
 	border: 1px solid #69c;
 }
 .goodValue {
-	border: 1px solid #69c;
+	box-shadow: 0 0 7px rgba(0,0,0,0.0);
 }
 .result {
 	height: 30vh+20vw;

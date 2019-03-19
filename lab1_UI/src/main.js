@@ -41,14 +41,14 @@ function validationOfValues(coeffs) {
 	for(var i = coeffs.length - 1; i >= 0; --i) {
 		if(!isValideNumber(coeffs[i].val())) {
 			coeffs[i].addClass("badValue");
-			errorMessage+= "[" + (i + 1) +"] coefficient '";
+			errorMessage+= "[" + ( coeffs.length - i ) +"] coefficient '";
 			errorMessage+= coeffs[i].val() + "' is not a number<br>";
 			res = false;
 		} else coeffs[i].addClass("goodValue");
 	}
 
 	if(coeffs[2].val() == "0") {
-		errorMessage+="The equation should be square, coefficient А is zero<br>";
+		errorMessage+="The equation should be square, coefficient 'А'' is zero<br>";
 		coeffs[2].addClass("badValue");
 		res = false;;
 	}
@@ -76,7 +76,7 @@ function calculate(event) {
 		coeffs[0] = $("#c_coeff").val();
 		var d = Math.sqrt(coeffs[1]*coeffs[1] - 4*coeffs[2]*coeffs[0]);
 		if(isNaN(d)){
-			console.log("Quadratic equation has no real roots" + "sqrt(" + 
+			console.log("Quadratic equation has no real roots " + "sqrt(" + 
 			coeffs[1]+"*"+coeffs[1] +"-"+ 4+"*"+coeffs[2]+"*"+coeffs[0]+") < 0")
 			$("#help_message").html("Quadratic equation has no real roots:<br>" + "sqrt(" + 
 			coeffs[1]+"*"+coeffs[1] +"-"+ 4+"*"+coeffs[2]+"*"+coeffs[0]+") < 0");

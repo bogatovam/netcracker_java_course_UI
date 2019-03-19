@@ -52,7 +52,7 @@ function validationOfValues(coeffs) {
 		coeffs[2].addClass("badValue");
 		res = false;;
 	}
-	console.log(errorMessage);
+	if(errorMessage != "") console.log(errorMessage);
 	errorMessage+= "Please enter valid numerical coefficient";
 	$("#help_message").html(errorMessage);
 	return res;

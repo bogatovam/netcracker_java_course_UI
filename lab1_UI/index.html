@@ -1,0 +1,28 @@
+<head>
+	<title>Quadratic roots</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="./src/main.js"></script>
+	<link rel="stylesheet" href="./style/css/style.css">
+</head>
+<body>
+	<form class="q_equation" id="q_equation">
+		<input type="text" name="a_coeff" id="a_coeff" class="field">
+		<label>*x^2 +</label>
+		<input type="text" name="b_coeff" id="b_coeff" class="field">
+		<label>*x + </label>
+		<input type="text" name="c_coeff" id="c_coeff" class="field">
+		<label> = 0 <br></label>
+		<input value="Send" type="submit" name="sbm_form" id="sbm_form" class="button"> 
+	</form>
+
+	<div id="result" class="result">
+		<p id="help_message">Enter coefficients A, B and C <br> To get the result, click send</p>
+		<p id="x1" class="values"></p>
+		<p id="x2" class="values"></p>
+	</div>
+<table id="tab1" class="history_table">
+	<caption class="history_table_caption">Сomputation history</caption>
+	<thead>	<tr><th>A</th><th>B</th><th>C</th><th>x1</th><th>x2</th></tr></thead>
+	<tbody></tbody>
+</table>
+</body>

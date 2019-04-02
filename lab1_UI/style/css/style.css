@@ -1,0 +1,85 @@
+.history_table {
+	text-transform: uppercase;
+	font-family: Courier New;
+	color: #669; 
+	border: 1px solid #69c;
+	text-align: center;
+  	font-size: 15;
+  	table-layout: fixed;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 95%;
+}
+.history_table_caption {
+	font-size: 25;
+}
+.history_table_td {
+  	color: #669;
+  	padding: 7px 17px;
+}
+.history_table_th {
+	background: #ccddff;
+}
+.history_table tr:hover td {
+	background: #9ebeff;
+}
+.history_table tr:nth-child(even) {
+	background: #ccddff;
+}
+.button {
+	border: 1px solid #69c;
+	margin-top: 20;
+    padding: 7px 17px;
+	color: #669; 
+    background: #fff; 
+    font-size: 15;
+
+    height: 40;
+	width: 25%;
+	max-width: 100;
+	min-width: 50;
+}
+.button:hover {
+	background-color: #ccddff;
+}
+
+.q_equation {
+	font-size: 4vw;
+	text-align: center;
+  	text-transform: uppercase;
+	font-family: Courier New;
+  	
+  	width: 90%;
+	margin-top: 5%;
+  	margin-left: 5%;
+  	color: #669; 
+}
+
+.field {
+	border: 1px solid #69c;
+	vertical-align: 3;
+	height: 3.5vw;
+	width:  5vw;
+	max-width: 70;
+	padding-top: -10;
+	font-size: 2vw;
+  	color: #669; 
+}
+.badValue {
+	box-shadow: 0 0 7px rgba(250,0,0,0.9);
+	border: 1px solid #69c;
+}
+.goodValue {
+	box-shadow: 0 0 7px rgba(0,0,0,0.0);
+}
+.result {
+	height: 30vh+20vw;
+	font-size: 25;
+	text-align: center;
+  	text-transform: uppercase;
+  	color: #669; 
+}
+.values {
+	font-size: 25;
+	font-weight: bold;
+}

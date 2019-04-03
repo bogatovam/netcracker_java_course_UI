@@ -47,7 +47,7 @@ public class GivingBookFrame extends AbstractFrame {
                 2, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL);
         addItem(dataPanel, createSpinner("День: ", calendar.get(Calendar.DAY_OF_MONTH), 0, 31, true),
                 3, 2, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL);
-        addItem(dataPanel,createSpinner("Месяц: ", calendar.get(Calendar.MONTH), 0, 12, true),
+        addItem(dataPanel, createSpinner("Месяц: ", calendar.get(Calendar.MONTH), 0, 12, true),
                 4, 2, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL);
         addItem(dataPanel, createSpinner("Год: ", calendar.get(Calendar.YEAR), 1950, 2050, true),
                 5, 2, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL);
@@ -70,13 +70,13 @@ public class GivingBookFrame extends AbstractFrame {
         String nameBook = ((JTextField) ((JPanel) infoPanel.getComponents()[0]).getComponents()[1]).getText();
         String customer = ((JTextField) ((JPanel) infoPanel.getComponents()[1]).getComponents()[1]).getText();
         String address = ((JTextField) ((JPanel) infoPanel.getComponents()[4]).getComponents()[1]).getText();
-        String email = ((JTextField) ((JPanel) infoPanel.getComponents()[5]).getComponents()[1]).getText();
-        String phone = ((JTextField) ((JPanel) infoPanel.getComponents()[3]).getComponents()[1]).getText();
+        String email = ((JTextField) ((JPanel) infoPanel.getComponents()[3]).getComponents()[1]).getText();
+        String phone = ((JFormattedTextField) ((JPanel) infoPanel.getComponents()[5]).getComponents()[1]).getText();
 
         if (nameBook.isEmpty()) {
             message.append("Введите название книги\n");
         }
-        if (customer.isEmpty() || !customer.matches("^[a-zA-Z]+$")) {
+        if (customer.isEmpty() || !customer.matches("^[ а-яА-Я]+$")) {
             message.append("Некорректное имя читателя\n");
         }
         if (address.isEmpty()) {
@@ -112,6 +112,7 @@ public class GivingBookFrame extends AbstractFrame {
     public void button1ActionListener(JButton button1, JButton button2) {
         StringBuilder message = new StringBuilder();
         boolean hasRecord = false;
+        boolean res = false;
 
         String nameBook = ((JTextField) ((JPanel) infoPanel.getComponents()[0]).getComponents()[1]).getText();
         String customer = ((JTextField) ((JPanel) infoPanel.getComponents()[1]).getComponents()[1]).getText();
@@ -123,7 +124,7 @@ public class GivingBookFrame extends AbstractFrame {
         GregorianCalendar GregorianCalendar = getDataFromSpinners();
 
         message.append(validationValues());
-        if(message.toString().isEmpty()) {
+        if (message.toString().isEmpty()) {
             Book needBook = library.getBookFromName(nameBook);
             if (needBook != null) {
                 for (Record record : library.getBook(needBook)) {
@@ -140,12 +141,13 @@ public class GivingBookFrame extends AbstractFrame {
                 message.append("Книга с таким названием не найдена, попробуйте еще раз \n");
             }
             if (!hasRecord) {
-                boolean res = library.giveBookToCustomer(needBook,
+                res = library.giveBookToCustomer(needBook,
                         new Customer(customer,
                                 getGenderFromCheckBox(),
-                                address,
                                 email,
-                                phone),
+                                phone,
+                                address
+                                ),
                         state
                 );
                 if (!res)
@@ -156,7 +158,7 @@ public class GivingBookFrame extends AbstractFrame {
                 }
             }
         }
-        JOptionPane.showMessageDialog(null, message.toString());
+        if(!res) JOptionPane.showMessageDialog(null, message.toString());
     }
 
     public void button2ActionListener(JButton button1, JButton button2) {

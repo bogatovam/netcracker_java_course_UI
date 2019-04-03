@@ -2,35 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3de99ff0-5fa7-4ffd-b351-0da5662d0071" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/AbstractFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/RecordModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SwingUILab2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/coverage-error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/result.json" beforeDir="false" afterPath="$PROJECT_DIR$/result.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/AbstractFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/AbstractFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/BookFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/BookFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/CustomerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/CustomerFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/GettingBookFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/GettingBookFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/GivingBookFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/GivingBookFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/SwingUILab2.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/data/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/data/Book.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/data/Library.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/data/Library.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/data/Record$State.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/data/Record$State.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/data/Record$Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/data/Record$Status.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/data/Record.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/data/Record.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/AbstractFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/AbstractFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/BookFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/BookFrame$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/BookFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/BookFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/CustomerFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/CustomerFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/CustomerFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/CustomerFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/GettingBookFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/GettingBookFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/GivingBookFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/GivingBookFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/MainFrame$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/MainFrame$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/MainFrame$1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/MainFrame$1$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/MainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/MainFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/MainFrame$2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/MainFrame$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/swingui/frames/MainFrame.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -49,25 +40,68 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Record.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Library.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
-              <caret line="77" column="44" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
+            <state relative-caret-position="380">
+              <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#673#698#0" />
+                <element signature="method#Library#0;class#Library#0" />
+                <element signature="class#1318:1378" />
+                <element signature="method#saveToFile#0;class#Library#0" />
+                <element signature="e#1650#1708#0" />
+                <element signature="e#1731#1849#0" />
+                <element signature="method#getBookFromName#0;class#Library#0" />
+                <element signature="e#2083#2188#1" />
+                <element signature="method#getIndexFromBook#0;class#Library#0" />
+                <element signature="e#2364#2464#1" />
+                <element signature="method#getBookFromIndex#0;class#Library#0" />
+                <element signature="e#2664#2756#1" />
+                <element signature="method#addBook#0;class#Library#0" />
+                <element signature="method#deleteBook#0;class#Library#0" />
+                <element signature="method#changeBook#0;class#Library#0" />
+                <element signature="e#3274#3369#1" />
+                <element signature="method#giveBookToCustomer#0;class#Library#0" />
+                <element signature="e#3730#4096#1" />
+                <element signature="e#3768#4086#1" />
+                <element signature="method#getBookFromCustomer#0;class#Library#0" />
+                <element signature="e#4536#5277#1" />
+                <element signature="e#4585#4993#1" />
+                <element signature="e#4779#4979#1" />
+                <element signature="e#5018#5170#1" />
+                <element signature="method#findCustomerByName#0;class#Library#0" />
+                <element signature="e#5565#5761#1" />
+                <element signature="e#5618#5751#1" />
+                <element signature="method#findAllCustomersBooks#0;class#Library#0" />
+                <element signature="e#5971#6158#1" />
+                <element signature="e#6024#6148#1" />
+                <element signature="method#getValueAt#0;class#Library#0" />
+                <element signature="e#6714#7220#1" />
+                <element signature="e#6749#7210#0" />
+                <element signature="method#getColumnName#0;class#Library#0" />
+                <element signature="e#7319#7570#0" />
+                <element signature="method#getColumnClass#0;class#Library#0" />
+                <element signature="e#7680#7920#0" />
+                <element signature="method#deleteRecord#0;class#Library#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/CustomerFrame.java">
+        <entry file="file://$PROJECT_DIR$/result.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-              <folding>
-                <element signature="class#3077:4531" />
-              </folding>
+            <state>
+              <caret column="18" lean-forward="true" selection-end-column="136" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/file2.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="136" selection-start-column="136" selection-end-column="136" />
             </state>
           </provider>
         </entry>
@@ -75,169 +109,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+            <state relative-caret-position="128">
+              <caret line="68" column="21" lean-forward="true" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
               <folding>
-                <element signature="method#createMenu#0;class#MainFrame#0" />
-                <element signature="e#1723#1998#0" />
-                <element signature="e#1903#1988#1" />
-                <element signature="method#createTable#0;class#MainFrame#0" />
-                <element signature="class#4229:6594" />
-                <element signature="method#mousePressed#0;class#3800:6106" />
-                <element signature="e#4069#4279#1" />
-                <element signature="e#4361#4419#1" />
-                <element signature="method#mouseReleased#0;class#3800:6106" />
-                <element signature="method#doPop#0;class#4229:6594" />
-                <element signature="class#5508:5943" />
-                <element signature="method#actionPerformed#0;class#5508:5943" />
-                <element signature="class#5501:5922" />
-                <element signature="method#actionPerformed#0;class#5501:5922" />
+                <element signature="e#3004#3005#0" expanded="true" />
+                <element signature="e#3082#3083#0" expanded="true" />
+                <element signature="e#3125#3126#0" expanded="true" />
+                <element signature="e#3204#3205#0" expanded="true" />
                 <element signature="method#createSearch#0;class#MainFrame#0" />
                 <element signature="method#searchInTable#0;class#MainFrame#0" />
-                <element signature="e#8155#8221#1" />
-                <element signature="e#7503#7504#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/AbstractFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="161" column="39" selection-start-line="161" selection-start-column="39" selection-end-line="161" selection-end-column="39" />
-              <folding>
-                <element signature="method#AbstractFrame#0;class#AbstractFrame#0" />
-                <element signature="method#createField#0;class#AbstractFrame#0" />
-                <element signature="method#createComboBox#0;class#AbstractFrame#0" />
-                <element signature="method#createCheckBox#0;class#AbstractFrame#0" />
-                <element signature="method#createButtons#0;class#AbstractFrame#0" />
-                <element signature="method#createButtons#1;class#AbstractFrame#0" />
-                <element signature="method#createSpinner#0;class#AbstractFrame#0" />
-                <element signature="method#button1ActionListener#0;class#AbstractFrame#0" />
-                <element signature="method#button1ActionListener#1;class#AbstractFrame#0" />
-                <element signature="method#button1ActionListener#2;class#AbstractFrame#0" />
-                <element signature="method#button1ActionListener#1;class#AbstractFrame#0" />
-                <element signature="method#button2ActionListener#1;class#AbstractFrame#0" />
-                <element signature="method#addItem#0;class#AbstractFrame#0" />
-                <element signature="e#5931#5975#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/BookFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="141" column="84" selection-start-line="141" selection-start-column="84" selection-end-line="141" selection-end-column="84" />
-              <folding>
-                <element signature="method#BookFrame#1;class#BookFrame#0" />
-                <element signature="method#getColumnName#0;class#6818:10726" />
-                <element signature="e#9123#9825#0" />
-                <element signature="method#getColumnClass#0;class#6818:10726" />
-                <element signature="e#9989#10665#0" />
-                <element signature="method#button1ActionListener#0;class#BookFrame#0" />
-                <element signature="e#8991#9114#1" />
-                <element signature="e#9200#10420#1" />
-                <element signature="e#9322#10410#1" />
-                <element signature="e#9830#9939#1" />
-                <element signature="method#button2ActionListener#0;class#BookFrame#0" />
-                <element signature="e#9948#10025#1" />
-                <element signature="e#10031#10174#1" />
-                <element signature="method#getGenderFromCheckBox#0;class#BookFrame#0" />
-                <element signature="e#12036#12071#1" />
-                <element signature="method#setEditable#0;class#BookFrame#0" />
-                <element signature="e#12283#12350#1" />
-                <element signature="e#12419#12489#1" />
-                <element signature="e#12619#12686#1" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/GivingBookFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-              <folding>
-                <element signature="method#GivingBookFrame#0;class#GivingBookFrame#0" />
-                <element signature="method#validationValues#0;class#GivingBookFrame#0" />
-                <element signature="e#3974#4041#1" />
-                <element signature="e#4110#4180#1" />
-                <element signature="e#4212#4280#1" />
-                <element signature="e#4310#4377#1" />
-                <element signature="e#4407#4476#1" />
-                <element signature="method#getGenderFromCheckBox#0;class#GivingBookFrame#0" />
-                <element signature="e#8996#9031#1" />
-                <element signature="method#getDataFromSpinners#0;class#GivingBookFrame#0" />
-                <element signature="method#button1ActionListener#0;class#GivingBookFrame#0" />
-                <element signature="e#7122#8518#1" />
-                <element signature="e#7221#7759#1" />
-                <element signature="e#7287#7745#1" />
-                <element signature="e#7579#7727#1" />
-                <element signature="e#7765#7907#1" />
-                <element signature="e#7936#8508#1" />
-                <element signature="e#8405#8494#1" />
-                <element signature="method#button2ActionListener#0;class#GivingBookFrame#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/GettingBookFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="122" column="4" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="4" />
-              <folding>
-                <element signature="method#GettingBookFrame#0;class#GettingBookFrame#0" />
-                <element signature="method#button1ActionListener#0;class#GettingBookFrame#0" />
-                <element signature="e#2871#3423#1" />
-                <element signature="e#2937#3409#1" />
-                <element signature="e#3216#3391#1" />
-                <element signature="e#3429#3580#1" />
-                <element signature="e#3609#3741#1" />
-                <element signature="e#3747#3824#1" />
-                <element signature="method#button2ActionListener#0;class#GettingBookFrame#0" />
-                <element signature="method#validationValues#0;class#GettingBookFrame#0" />
-                <element signature="e#4851#4918#1" />
-                <element signature="e#4987#5057#1" />
-                <element signature="e#5089#5157#1" />
-                <element signature="e#5187#5254#1" />
-                <element signature="e#5284#5353#1" />
-                <element signature="method#getDataFromSpinners#0;class#GettingBookFrame#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Library.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="138" column="56" lean-forward="true" selection-start-line="138" selection-start-column="56" selection-end-line="138" selection-end-column="56" />
-              <folding>
-                <element signature="e#673#698#0" />
-                <element signature="method#Library#0;class#Library#0" />
-                <element signature="method#downloadFromFile#0;class#Library#0" />
-                <element signature="e#1266#1390#0" />
-                <element signature="class#1318:1378" />
-                <element signature="e#1413#1540#0" />
-                <element signature="method#saveToFile#0;class#Library#0" />
-                <element signature="e#1650#1708#0" />
-                <element signature="e#1731#1849#0" />
-                <element signature="method#getBookFromName#0;class#Library#0" />
-                <element signature="e#2083#2188#1" />
-                <element signature="e#2364#2464#1" />
-                <element signature="method#getBookFromIndex#0;class#Library#0" />
-                <element signature="e#2664#2756#1" />
-                <element signature="method#addBook#0;class#Library#0" />
-                <element signature="method#changeBook#0;class#Library#0" />
-                <element signature="method#findAllCustomersBooks#0;class#Library#0" />
-                <element signature="method#getColumnName#0;class#Library#0" />
-                <element signature="method#getColumnClass#0;class#Library#0" />
+                <element signature="e#7725#7726#0" expanded="true" />
+                <element signature="e#7790#7791#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -254,8 +136,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>clon</find>
-      <find>adres</find>
       <find>data</find>
       <find>save</find>
       <find>cu</find>
@@ -276,8 +156,16 @@
       <find>stil</find>
       <find>va</find>
       <find>dele</find>
-      <find>non</find>
       <find>vali</find>
+      <find>val</find>
+      <find>String.class</find>
+      <find>non</find>
+      <find>fal</find>
+      <find>library.saveToFile</find>
+      <find>им</find>
+      <find>combo</find>
+      <find>JFormattedTextField</find>
+      <find>&quot;result.json&quot;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -299,13 +187,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Author.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Book.java" />
         <option value="$PROJECT_DIR$/result.json" />
-        <option value="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/MainFrame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/AbstractFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/CustomerFrame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/BookFrame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Library.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/GettingBookFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/GivingBookFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/GettingBookFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/AbstractFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/RecordModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/BookFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/MainFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Library.java" />
+        <option value="$PROJECT_DIR$/file2.json" />
       </list>
     </option>
   </component>
@@ -340,46 +230,7 @@
             <path>
               <item name="SwingUILab2" type="b2602c69:ProjectViewProjectNode" />
               <item name="SwingUILab2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SwingUILab2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SwingUILab2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SwingUILab2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SwingUILab2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SwingUILab2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SwingUILab2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="swingui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SwingUILab2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SwingUILab2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="swingui" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SwingUILab2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SwingUILab2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="swingui" type="462c0819:PsiDirectoryNode" />
-              <item name="frames" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -392,7 +243,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554271783329" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554293584055" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Lab2" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -498,7 +349,7 @@
       <window_info anchor="right" id="Ant Build" order="8" weight="0.24962178" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25718608" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -508,7 +359,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23895253" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23895253" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -630,24 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/result.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="91" selection-start-column="91" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#836#837#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Book.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -658,91 +491,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/MainFrame.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
-          <folding>
-            <element signature="method#createMenu#0;class#MainFrame#0" />
-            <element signature="e#1723#1998#0" />
-            <element signature="e#1903#1988#1" />
-            <element signature="method#createTable#0;class#MainFrame#0" />
-            <element signature="class#4229:6594" />
-            <element signature="method#mousePressed#0;class#3800:6106" />
-            <element signature="e#4069#4279#1" />
-            <element signature="e#4361#4419#1" />
-            <element signature="method#mouseReleased#0;class#3800:6106" />
-            <element signature="method#doPop#0;class#4229:6594" />
-            <element signature="class#5508:5943" />
-            <element signature="method#actionPerformed#0;class#5508:5943" />
-            <element signature="class#5501:5922" />
-            <element signature="method#actionPerformed#0;class#5501:5922" />
-            <element signature="method#createSearch#0;class#MainFrame#0" />
-            <element signature="method#searchInTable#0;class#MainFrame#0" />
-            <element signature="e#8155#8221#1" />
-            <element signature="e#7503#7504#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/AbstractFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="161" column="39" selection-start-line="161" selection-start-column="39" selection-end-line="161" selection-end-column="39" />
-          <folding>
-            <element signature="method#AbstractFrame#0;class#AbstractFrame#0" />
-            <element signature="method#createField#0;class#AbstractFrame#0" />
-            <element signature="method#createComboBox#0;class#AbstractFrame#0" />
-            <element signature="method#createCheckBox#0;class#AbstractFrame#0" />
-            <element signature="method#createButtons#0;class#AbstractFrame#0" />
-            <element signature="method#createButtons#1;class#AbstractFrame#0" />
-            <element signature="method#createSpinner#0;class#AbstractFrame#0" />
-            <element signature="method#button1ActionListener#0;class#AbstractFrame#0" />
-            <element signature="method#button1ActionListener#1;class#AbstractFrame#0" />
-            <element signature="method#button1ActionListener#2;class#AbstractFrame#0" />
-            <element signature="method#button1ActionListener#1;class#AbstractFrame#0" />
-            <element signature="method#button2ActionListener#1;class#AbstractFrame#0" />
-            <element signature="method#addItem#0;class#AbstractFrame#0" />
-            <element signature="e#5931#5975#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/CustomerFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="class#3077:4531" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/BookFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="141" column="84" selection-start-line="141" selection-start-column="84" selection-end-line="141" selection-end-column="84" />
-          <folding>
-            <element signature="method#BookFrame#1;class#BookFrame#0" />
-            <element signature="method#getColumnName#0;class#6818:10726" />
-            <element signature="e#9123#9825#0" />
-            <element signature="method#getColumnClass#0;class#6818:10726" />
-            <element signature="e#9989#10665#0" />
-            <element signature="method#button1ActionListener#0;class#BookFrame#0" />
-            <element signature="e#8991#9114#1" />
-            <element signature="e#9200#10420#1" />
-            <element signature="e#9322#10410#1" />
-            <element signature="e#9830#9939#1" />
-            <element signature="method#button2ActionListener#0;class#BookFrame#0" />
-            <element signature="e#9948#10025#1" />
-            <element signature="e#10031#10174#1" />
-            <element signature="method#getGenderFromCheckBox#0;class#BookFrame#0" />
-            <element signature="e#12036#12071#1" />
-            <element signature="method#setEditable#0;class#BookFrame#0" />
-            <element signature="e#12283#12350#1" />
-            <element signature="e#12419#12489#1" />
-            <element signature="e#12619#12686#1" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="116" column="31" selection-start-line="116" selection-start-column="31" selection-end-line="116" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -756,66 +508,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Library.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/javax/swing/JTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="138" column="56" lean-forward="true" selection-start-line="138" selection-start-column="56" selection-end-line="138" selection-end-column="56" />
+        <state relative-caret-position="17">
+          <caret line="2718" column="18" selection-start-line="2718" selection-start-column="18" selection-end-line="2718" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/CustomerFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
           <folding>
-            <element signature="e#673#698#0" />
-            <element signature="method#Library#0;class#Library#0" />
-            <element signature="method#downloadFromFile#0;class#Library#0" />
-            <element signature="e#1266#1390#0" />
-            <element signature="class#1318:1378" />
-            <element signature="e#1413#1540#0" />
-            <element signature="method#saveToFile#0;class#Library#0" />
-            <element signature="e#1650#1708#0" />
-            <element signature="e#1731#1849#0" />
-            <element signature="method#getBookFromName#0;class#Library#0" />
-            <element signature="e#2083#2188#1" />
-            <element signature="e#2364#2464#1" />
-            <element signature="method#getBookFromIndex#0;class#Library#0" />
-            <element signature="e#2664#2756#1" />
-            <element signature="method#addBook#0;class#Library#0" />
-            <element signature="method#changeBook#0;class#Library#0" />
-            <element signature="method#findAllCustomersBooks#0;class#Library#0" />
-            <element signature="method#getColumnName#0;class#Library#0" />
-            <element signature="method#getColumnClass#0;class#Library#0" />
+            <element signature="class#3077:4531" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/GettingBookFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/BookFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="122" column="4" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="4" />
+        <state relative-caret-position="125">
+          <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
           <folding>
-            <element signature="method#GettingBookFrame#0;class#GettingBookFrame#0" />
-            <element signature="method#button1ActionListener#0;class#GettingBookFrame#0" />
-            <element signature="e#2871#3423#1" />
-            <element signature="e#2937#3409#1" />
-            <element signature="e#3216#3391#1" />
-            <element signature="e#3429#3580#1" />
-            <element signature="e#3609#3741#1" />
-            <element signature="e#3747#3824#1" />
-            <element signature="method#button2ActionListener#0;class#GettingBookFrame#0" />
-            <element signature="method#validationValues#0;class#GettingBookFrame#0" />
-            <element signature="e#4851#4918#1" />
-            <element signature="e#4987#5057#1" />
-            <element signature="e#5089#5157#1" />
-            <element signature="e#5187#5254#1" />
-            <element signature="e#5284#5353#1" />
-            <element signature="method#getDataFromSpinners#0;class#GettingBookFrame#0" />
+            <element signature="method#BookFrame#0;class#BookFrame#0" />
+            <element signature="method#BookFrame#1;class#BookFrame#0" />
+            <element signature="method#button2ActionListener#0;class#BookFrame#0" />
+            <element signature="method#getGenderFromCheckBox#0;class#BookFrame#0" />
+            <element signature="method#validationValues#0;class#BookFrame#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/AbstractFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+          <folding>
+            <element signature="method#createField#0;class#AbstractFrame#0" />
+            <element signature="method#createCheckBox#0;class#AbstractFrame#0" />
+            <element signature="method#createButtons#0;class#AbstractFrame#0" />
+            <element signature="method#createButtons#1;class#AbstractFrame#0" />
+            <element signature="method#createSpinner#0;class#AbstractFrame#0" />
+            <element signature="method#button1ActionListener#0;class#AbstractFrame#0" />
+            <element signature="method#button1ActionListener#1;class#AbstractFrame#0" />
+            <element signature="method#button1ActionListener#2;class#AbstractFrame#0" />
+            <element signature="method#button1ActionListener#1;class#AbstractFrame#0" />
+            <element signature="method#button2ActionListener#1;class#AbstractFrame#0" />
+            <element signature="method#addItem#0;class#AbstractFrame#0" />
+            <element signature="method#createPhoneField#0;class#AbstractFrame#0" />
+            <element signature="e#5931#5975#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/RecordModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#280#281#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/GivingBookFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        <state relative-caret-position="221">
+          <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
           <folding>
             <element signature="method#GivingBookFrame#0;class#GivingBookFrame#0" />
-            <element signature="method#validationValues#0;class#GivingBookFrame#0" />
             <element signature="e#3974#4041#1" />
             <element signature="e#4110#4180#1" />
             <element signature="e#4212#4280#1" />
@@ -824,7 +589,6 @@
             <element signature="method#getGenderFromCheckBox#0;class#GivingBookFrame#0" />
             <element signature="e#8996#9031#1" />
             <element signature="method#getDataFromSpinners#0;class#GivingBookFrame#0" />
-            <element signature="method#button1ActionListener#0;class#GivingBookFrame#0" />
             <element signature="e#7122#8518#1" />
             <element signature="e#7221#7759#1" />
             <element signature="e#7287#7745#1" />
@@ -834,6 +598,107 @@
             <element signature="e#8405#8494#1" />
             <element signature="method#button2ActionListener#0;class#GivingBookFrame#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#836#837#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/GettingBookFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="38" column="54" lean-forward="true" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
+          <folding>
+            <element signature="method#button2ActionListener#0;class#GettingBookFrame#0" />
+            <element signature="e#4851#4918#1" />
+            <element signature="e#4987#5057#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/frames/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="68" column="21" lean-forward="true" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
+          <folding>
+            <element signature="e#3004#3005#0" expanded="true" />
+            <element signature="e#3082#3083#0" expanded="true" />
+            <element signature="e#3125#3126#0" expanded="true" />
+            <element signature="e#3204#3205#0" expanded="true" />
+            <element signature="method#createSearch#0;class#MainFrame#0" />
+            <element signature="method#searchInTable#0;class#MainFrame#0" />
+            <element signature="e#7725#7726#0" expanded="true" />
+            <element signature="e#7790#7791#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/netcracker/swingui/data/Library.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+          <folding>
+            <element signature="e#673#698#0" />
+            <element signature="method#Library#0;class#Library#0" />
+            <element signature="class#1318:1378" />
+            <element signature="method#saveToFile#0;class#Library#0" />
+            <element signature="e#1650#1708#0" />
+            <element signature="e#1731#1849#0" />
+            <element signature="method#getBookFromName#0;class#Library#0" />
+            <element signature="e#2083#2188#1" />
+            <element signature="method#getIndexFromBook#0;class#Library#0" />
+            <element signature="e#2364#2464#1" />
+            <element signature="method#getBookFromIndex#0;class#Library#0" />
+            <element signature="e#2664#2756#1" />
+            <element signature="method#addBook#0;class#Library#0" />
+            <element signature="method#deleteBook#0;class#Library#0" />
+            <element signature="method#changeBook#0;class#Library#0" />
+            <element signature="e#3274#3369#1" />
+            <element signature="method#giveBookToCustomer#0;class#Library#0" />
+            <element signature="e#3730#4096#1" />
+            <element signature="e#3768#4086#1" />
+            <element signature="method#getBookFromCustomer#0;class#Library#0" />
+            <element signature="e#4536#5277#1" />
+            <element signature="e#4585#4993#1" />
+            <element signature="e#4779#4979#1" />
+            <element signature="e#5018#5170#1" />
+            <element signature="method#findCustomerByName#0;class#Library#0" />
+            <element signature="e#5565#5761#1" />
+            <element signature="e#5618#5751#1" />
+            <element signature="method#findAllCustomersBooks#0;class#Library#0" />
+            <element signature="e#5971#6158#1" />
+            <element signature="e#6024#6148#1" />
+            <element signature="method#getValueAt#0;class#Library#0" />
+            <element signature="e#6714#7220#1" />
+            <element signature="e#6749#7210#0" />
+            <element signature="method#getColumnName#0;class#Library#0" />
+            <element signature="e#7319#7570#0" />
+            <element signature="method#getColumnClass#0;class#Library#0" />
+            <element signature="e#7680#7920#0" />
+            <element signature="method#deleteRecord#0;class#Library#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="18" lean-forward="true" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="136" selection-start-column="136" selection-end-column="136" />
         </state>
       </provider>
     </entry>

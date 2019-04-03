@@ -7,7 +7,13 @@ import com.netcracker.swingui.data.Record;
 
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -22,8 +28,8 @@ public class BookFrame extends AbstractFrame {
     private JScrollPane table;
     private JPanel buttons;
     private JPanel authorsPanel;
-    private boolean editableFlag = true;
-    private boolean isAddingBook = false;
+    private Boolean editableFlag;
+    private Boolean isAddingBook = false;
 
     public BookFrame(Library library) {
         super("Страница книги");
@@ -104,103 +110,56 @@ public class BookFrame extends AbstractFrame {
     }
 
     public JScrollPane createTable() {
-        JTable table = new JTable(new AbstractTableModel() {
-            @Override
-            public int getRowCount() {
-                return library.getBook(book) == null ? 0 : library.getBook(book).size();
-            }
-
-            @Override
-            public int getColumnCount() {
-                return 9;
-            }
-
-            @Override
-            public Object getValueAt(int rowIndex, int columnIndex) {
-                List<Record> current = library.getBook(book);
-                if (current != null) {
-                    switch (columnIndex) {
-                        case 0:
-                            return current.get(rowIndex).getCustomer().getName();
-                        case 1:
-                            return current.get(rowIndex).getCustomer().getAddress();
-                        case 2:
-                            return current.get(rowIndex).getCustomer().getEmail();
-                        case 3:
-                            return current.get(rowIndex).getCustomer().getGender();
-                        case 4:
-                            return current.get(rowIndex).getCustomer().getPhone();
-                        case 5:
-                            return current.get(rowIndex).getState();
-                        case 6:
-                            return current.get(rowIndex).getStatus();
-                        case 7:
-                            return current.get(rowIndex).getBeginDate().get(GregorianCalendar.DAY_OF_MONTH) + "." +
-                                    current.get(rowIndex).getBeginDate().get(GregorianCalendar.MONTH) + "." +
-                                    current.get(rowIndex).getBeginDate().get(GregorianCalendar.YEAR);
-                        case 8:
-                            return current.get(rowIndex).getEndDate() == null ? "Нет" :
-                                    current.get(rowIndex).getEndDate().get(GregorianCalendar.DAY_OF_MONTH) + "." +
-                                            current.get(rowIndex).getEndDate().get(GregorianCalendar.MONTH) + "." +
-                                            current.get(rowIndex).getEndDate().get(GregorianCalendar.YEAR);
-                    }
-                }
-                return null;
-            }
-
-
-            @Override
-            public String getColumnName(int columnIndex) {
-                switch (columnIndex) {
-                    case 0:
-                        return "Имя читателя";
-                    case 1:
-                        return "Адрес читателя";
-                    case 2:
-                        return "EMail читателя";
-                    case 3:
-                        return "Пол";
-                    case 4:
-                        return "Телефон";
-                    case 5:
-                        return "Состояние книги";
-                    case 6:
-                        return "Статус книги";
-                    case 7:
-                        return "Дата получения книги";
-                    case 8:
-                        return "Дата возврата книги";
-                }
-                return "";
-            }
-
-            @Override
-            public Class<?> getColumnClass(int columnIndex) {
-                switch (columnIndex) {
-                    case 0:
-                        return String.class;
-                    case 1:
-                        return String.class;
-                    case 2:
-                        return String.class;
-                    case 3:
-                        return String.class;
-                    case 4:
-                        return String.class;
-                    case 5:
-                        return String.class;
-                    case 6:
-                        return String.class;
-                    case 7:
-                        return String.class;
-                    case 8:
-                        return String.class;
-                }
-                return Object.class;
-            }
-        });
+        RecordModel tableModel = new RecordModel(library, book, editableFlag);
+        JTable table = new JTable(tableModel);
+        for (int i = 0; i < 9; ++i)
+            table.getColumnModel().getColumn(i).setCellRenderer(new TableChecker());
+        table.getTableHeader().setReorderingAllowed(false);
         table.setFont(font);
         table.setRowHeight(25);
+
+        table.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent mouseEvent) {
+                Point point = mouseEvent.getPoint();
+                int row = table.rowAtPoint(point);
+
+                if (mouseEvent.getClickCount() == 2 && table.getSelectedRow() != -1) {
+                    Book changed = library.getBookFromName(table.getValueAt(row, 0).toString());
+                    SwingUtilities.invokeLater(() -> new BookFrame(library, changed, false));
+                }
+                if (mouseEvent.isPopupTrigger() && table.getSelectedRow() != -1) {
+                    doPop(mouseEvent);
+                }
+            }
+
+            public void mouseReleased(MouseEvent mouseEvent) {
+                JTable table = (JTable) mouseEvent.getSource();
+                if (mouseEvent.isPopupTrigger() && table.getSelectedRow() != -1)
+                    doPop(mouseEvent);
+            }
+
+            private void doPop(MouseEvent mouseEvent) {
+                Point point = mouseEvent.getPoint();
+                int row = table.rowAtPoint(point);
+                JPopupMenu menu = new JPopupMenu();
+                JMenuItem item2 = new JMenuItem("Удалить");
+
+                item2.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(editableFlag) {
+                            library.deleteRecord(book, tableModel.getRecord(row));
+                            tableModel.fireTableDataChanged();
+                            library.saveToFile(sourceFile);
+                        }
+                    }
+                });
+                menu.add(item2);
+                menu.show(mouseEvent.getComponent(), mouseEvent.getX(), mouseEvent.getY());
+            }
+
+        });
+
         JScrollPane panel = new JScrollPane(table, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,
                 ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         panel.setPreferredSize(new Dimension(750, 240));
@@ -212,30 +171,34 @@ public class BookFrame extends AbstractFrame {
         if (button1.getText().equals("Редактировать")) {
             button1.setText("Сохранить");
             button2.setText("Отмена");
+            editableFlag = true;
             setEditable(true);
         } else {
-            StringBuilder message = new StringBuilder(validationValues());
-            if (message.toString().isEmpty()) {
-                Book newBook = new Book();
-                Component[] comps = infoPanel.getComponents();
-                newBook.setQty((int) ((JSpinner) ((JPanel) comps[2]).getComponents()[1]).getValue());
-                newBook.setAuthors(new Author(((JTextField) (((JPanel) ((JPanel) comps[1]).getComponents()[0]).getComponents()[1])).getText(),
-                        ((JTextField) (((JPanel) ((JPanel) comps[1]).getComponents()[2]).getComponents()[1])).getText(),
-                        getGenderFromCheckBox())
-                );
-                newBook.setName((String) ((JTextField) ((JPanel) comps[0]).getComponents()[1]).getText());
-                if (isAddingBook) {
-                    library.addBook(newBook);
-                    table.setVisible(true);
-                } else
-                    library.changeBook(book, newBook);
-                book = newBook;
-                library.saveToFile(new File("result.json"));
+            if (TableChecker.resultM) {
+                editableFlag = false;
+                StringBuilder message = new StringBuilder(validationValues());
+                if (message.toString().isEmpty()) {
+                    Book newBook = new Book();
+                    Component[] comps = infoPanel.getComponents();
+                    newBook.setQty((int) ((JSpinner) ((JPanel) comps[2]).getComponents()[1]).getValue());
+                    newBook.setAuthors(new Author(((JTextField) (((JPanel) ((JPanel) comps[1]).getComponents()[0]).getComponents()[1])).getText(),
+                            ((JTextField) (((JPanel) ((JPanel) comps[1]).getComponents()[2]).getComponents()[1])).getText(),
+                            getGenderFromCheckBox())
+                    );
+                    newBook.setName((String) ((JTextField) ((JPanel) comps[0]).getComponents()[1]).getText());
+                    if (isAddingBook) {
+                        library.addBook(newBook);
+                        table.setVisible(true);
+                    } else
+                        library.changeBook(book, newBook);
+                    book = newBook;
+                    library.saveToFile(sourceFile);
 
-                button1.setText("Редактировать");
-                button2.setText("Выход");
-                setEditable(false);
-            } else JOptionPane.showMessageDialog(null, "Некорректный ввод:\n" + message.toString());
+                    button1.setText("Редактировать");
+                    button2.setText("Выход");
+                    setEditable(false);
+                } else JOptionPane.showMessageDialog(null, "Некорректный ввод:\n" + message.toString());
+            } else JOptionPane.showMessageDialog(this, "Введите корректные значения в подсвечиваемые поля");
         }
     }
 
@@ -244,6 +207,7 @@ public class BookFrame extends AbstractFrame {
             setVisible(false);
             dispose();
         } else {
+            editableFlag = false;
             button1.setText("Редактировать");
             button2.setText("Выход");
             setEditable(false);
@@ -291,5 +255,30 @@ public class BookFrame extends AbstractFrame {
 
         return message.toString();
     }
-
 }
+
+class TableChecker extends DefaultTableCellRenderer {
+    public static Boolean resultM = true;
+
+    @Override
+    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int col) {
+        JLabel label = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, col);
+        String text = label.getText();
+        boolean result = true;
+        if (col == 0)
+            result = text != null && !text.equals("") && text.matches("^[ а-яА-Я]+$");
+        else if (col == 3) {
+            result = text != null && (text.charAt(0) == 'F' || text.charAt(0) == 'M');
+        } else if (col == 1 || col == 2) {
+            result = text != null && !text.equals("");
+        } else if (col == 4) {
+            result = text != null && text.matches("^((\\+7))?(\\(?\\d{3}\\)?)?[\\d]{7}$");
+        }
+        if (hasFocus) label.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+        else if (result) label.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        else label.setBorder(BorderFactory.createLineBorder(Color.RED));
+        resultM = resultM & result;
+        return label;
+    }
+}
+

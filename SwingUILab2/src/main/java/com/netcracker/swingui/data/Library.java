@@ -39,8 +39,9 @@ public class Library extends AbstractTableModel {
             });
         } catch (IOException e) {
             System.out.println("Something with downloading from file went wrong");
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
+        fireTableDataChanged();
     }
 
     public void saveToFile(File file) {
@@ -129,15 +130,18 @@ public class Library extends AbstractTableModel {
         return result;
     }
 
-    public boolean getBookFromCustomer(Book book, Customer customer, Record.State state) {
+    public boolean getBookFromCustomer(Book book, String customer, Record.State state, GregorianCalendar date ) {
         boolean result = false;
         List<Record> customerList = dataBase.get(book);
         if (customerList != null) {
             for (Record record : customerList) {
-                if (record.getCustomer().equals(customer)) {
-                    record.setState(state);
+                if (record.getCustomer().getName().equals(customer) &&
+                        record.getStatus() == Record.Status.GIVE &&
+                        record.getEndDate() == null) {
                     record.setStatus(Record.Status.GET);
-                    record.setEndDate(new GregorianCalendar());
+                    record.setState(state);
+                    record.setEndDate(date);
+                    result = true;
                 }
             }
             if (result) {
@@ -145,9 +149,9 @@ public class Library extends AbstractTableModel {
                 book.setQty(book.getQty() + 1);
                 dataBase.put(book, customerList);
             } else
-                throw new IllegalArgumentException("Данный читатель не брал эту книгу");
+                throw new IllegalArgumentException("Указанный читатель не брал эту книгу");
         } else
-            throw new IllegalArgumentException("Данная книга отсутствует в базе");
+            throw new IllegalArgumentException("Указанная книга отсутствует в базе");
         return result;
     }
 
@@ -238,4 +242,8 @@ public class Library extends AbstractTableModel {
         return Object.class;
     }
 
+    public void deleteRecord(Book book, Record record) {
+        dataBase.get(book).remove(record);
+        fireTableDataChanged();
+    }
 }

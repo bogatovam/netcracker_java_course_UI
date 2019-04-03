@@ -7,14 +7,17 @@ import com.netcracker.swingui.data.Record;
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
 import java.awt.*;
+import java.io.File;
 import java.text.ParseException;
 import java.util.GregorianCalendar;
 
 public abstract class AbstractFrame extends JFrame {
     protected Font font = new Font("Verdana", Font.PLAIN, 12);
+    protected File sourceFile;
 
     public AbstractFrame(final String nameFrame) {
         super(nameFrame);
+        sourceFile = new File("result.json");
         setVisible(false);
     }
 
@@ -42,7 +45,7 @@ public abstract class AbstractFrame extends JFrame {
 
         label.setFont(font);
         comboBox.setFont(font);
-        comboBox.setEditable(editableFlag);
+        comboBox.setEnabled(editableFlag);
         panel.add(label);
         panel.add(comboBox);
         return panel;
@@ -159,7 +162,7 @@ public abstract class AbstractFrame extends JFrame {
         JPanel panel = new JPanel(new GridLayout(1, 2, 0, 0));
         MaskFormatter mf2 = null;
         try {
-            mf2 = new MaskFormatter("+7(###) ###-####");
+            mf2 = new MaskFormatter("+7(###)#######");
         } catch (ParseException e) {
             e.printStackTrace();
         }

@@ -1,7 +1,9 @@
 package com.netcracker.swingui.frames;
 
+import com.fasterxml.jackson.core.JsonParseException;
 import com.netcracker.swingui.data.Book;
 import com.netcracker.swingui.data.Library;
+import com.sun.rmi.rmid.ExecPermission;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -64,7 +66,11 @@ public class MainFrame extends AbstractFrame {
             JFileChooser fileopen = new JFileChooser();
             int ret = fileopen.showDialog(null, "Открыть файл");
             if (ret == JFileChooser.APPROVE_OPTION) {
-                library.downloadFromFile(fileopen.getSelectedFile());
+                try {
+                    library.downloadFromFile(fileopen.getSelectedFile());
+                } catch (RuntimeException exception){
+                    JOptionPane.showMessageDialog(null, "Что-то пошло не так с загрузкой файла :(");
+                }
             }
         });
         exitItem.addActionListener(e -> System.exit(0));
@@ -90,7 +96,7 @@ public class MainFrame extends AbstractFrame {
 
     public void button3ActionListener() {
         String personName = JOptionPane.showInputDialog("Введите имя читателя: ");
-        if (personName.isEmpty() || !personName.matches("^[a-zA-Z]+$")) {
+        if (personName.isEmpty() || !personName.matches("^[ а-яА-Я]+$")) {
             JOptionPane.showMessageDialog(null, "Некорректный ввод имени читателя\n" +
                     "Имя должно быть непустым, не сожержать цифр и начинаться с заглавной буквы");
             return;

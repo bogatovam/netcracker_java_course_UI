@@ -158,7 +158,7 @@ public abstract class AbstractFrame extends JFrame {
         p.add(c, gc);
     }
 
-    public JPanel createPhoneField(String sourceLabel, String sourceText) {
+    public JPanel createPhoneField(String sourceLabel, String sourceText, boolean editableFlag) {
         JPanel panel = new JPanel(new GridLayout(1, 2, 0, 0));
         MaskFormatter mf2 = null;
         try {
@@ -167,7 +167,8 @@ public abstract class AbstractFrame extends JFrame {
             e.printStackTrace();
         }
         JFormattedTextField field = new JFormattedTextField(mf2);
-
+        field.setText(sourceText);
+        field.setEditable(editableFlag);
         JLabel label = new JLabel(sourceLabel);
         field.setFont(font);
         label.setFont(font);

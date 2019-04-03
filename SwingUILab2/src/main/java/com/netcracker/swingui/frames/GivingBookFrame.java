@@ -36,7 +36,7 @@ public class GivingBookFrame extends AbstractFrame {
                 2, 4, 1, 1, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL);
         addItem(infoPanel, createField("E-mail: ", "", true),
                 2, 5, 1, 1, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL);
-        addItem(infoPanel, createPhoneField("Телефон: ", ""),
+        addItem(infoPanel, createPhoneField("Телефон: ", "", true),
                 2, 6, 1, 1, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL);
         addItem(infoPanel, createComboBox("Состояние, в котором выдается книга: ", Record.State.GOOD, true),
                 2, 8, 1, 1, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL);
@@ -116,8 +116,8 @@ public class GivingBookFrame extends AbstractFrame {
 
         String nameBook = ((JTextField) ((JPanel) infoPanel.getComponents()[0]).getComponents()[1]).getText();
         String customer = ((JTextField) ((JPanel) infoPanel.getComponents()[1]).getComponents()[1]).getText();
-        String address = ((JTextField) ((JPanel) infoPanel.getComponents()[4]).getComponents()[1]).getText();
-        String email = ((JTextField) ((JPanel) infoPanel.getComponents()[3]).getComponents()[1]).getText();
+        String address = ((JTextField) ((JPanel) infoPanel.getComponents()[3]).getComponents()[1]).getText();
+        String email = ((JTextField) ((JPanel) infoPanel.getComponents()[4]).getComponents()[1]).getText();
         String phone = ((JFormattedTextField) ((JPanel) infoPanel.getComponents()[5]).getComponents()[1]).getText();
 
         Record.State state = (Record.State) ((JComboBox) ((JPanel) infoPanel.getComponents()[6]).getComponents()[1]).getSelectedItem();

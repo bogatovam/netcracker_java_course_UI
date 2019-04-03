@@ -1,24 +1,14 @@
 package com.netcracker.swingui.frames;
 
-import com.netcracker.swingui.data.Author;
-import com.netcracker.swingui.data.Book;
-import com.netcracker.swingui.data.Library;
-import com.netcracker.swingui.data.Record;
+import com.netcracker.swingui.data.*;
 
 import javax.swing.*;
-import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.File;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Map;
 
 public class BookFrame extends AbstractFrame {
     private Book book;
@@ -123,10 +113,6 @@ public class BookFrame extends AbstractFrame {
                 Point point = mouseEvent.getPoint();
                 int row = table.rowAtPoint(point);
 
-                if (mouseEvent.getClickCount() == 2 && table.getSelectedRow() != -1) {
-                    Book changed = library.getBookFromName(table.getValueAt(row, 0).toString());
-                    SwingUtilities.invokeLater(() -> new BookFrame(library, changed, false));
-                }
                 if (mouseEvent.isPopupTrigger() && table.getSelectedRow() != -1) {
                     doPop(mouseEvent);
                 }

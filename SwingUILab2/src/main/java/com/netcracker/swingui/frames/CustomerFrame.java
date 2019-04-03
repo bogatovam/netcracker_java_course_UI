@@ -36,7 +36,7 @@ public class CustomerFrame extends AbstractFrame {
                 2, 4, 1, 1, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL);
         addItem(infoPanel, createField("E-mail: ", customer.getEmail(), false),
                 2, 5, 1, 1, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL);
-        addItem(infoPanel, createPhoneField("Телефон: ", customer.getPhone()),
+        addItem(infoPanel, createPhoneField("Телефон: ", customer.getPhone(), false),
                 2, 6, 1, 1, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL);
         addItem(mainPanel, infoPanel, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL);
         addItem(mainPanel, createTable(), 1, 2, 2, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);

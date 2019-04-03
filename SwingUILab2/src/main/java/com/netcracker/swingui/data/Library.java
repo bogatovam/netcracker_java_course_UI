@@ -16,20 +16,20 @@ import java.util.Date;
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.ANY;
 
 public class Library extends AbstractTableModel {
-    private String sourceFileName = "";
-
+    private File sourceFile;
     @JsonProperty("dataBase")
     @JsonDeserialize(keyUsing = Book.class)
     private Map<Book, List<Record>> dataBase;
 
     @JsonCreator
     public Library(String sourcefileName) {
-        this.sourceFileName = sourcefileName;
+        sourceFile = new File(sourcefileName);
         dataBase = new HashMap<>();
-        downloadFromFile(new File(sourcefileName));
+        downloadFromFile(sourceFile);
     }
 
     public void downloadFromFile(File file) {
+        sourceFile = file;
         ObjectMapper mapper = new ObjectMapper();
         SimpleModule simpleModule = new SimpleModule();
         simpleModule.addKeyDeserializer(Book.class, new Book());
@@ -125,12 +125,12 @@ public class Library extends AbstractTableModel {
             }
         } else
             throw new IllegalArgumentException(book + " doesn't exist in the book base");
-        saveToFile(new File(sourceFileName));
+        saveToFile(sourceFile);
         fireTableDataChanged();
         return result;
     }
 
-    public boolean getBookFromCustomer(Book book, String customer, Record.State state, GregorianCalendar date ) {
+    public boolean getBookFromCustomer(Book book, String customer, Record.State state, GregorianCalendar date) {
         boolean result = false;
         List<Record> customerList = dataBase.get(book);
         if (customerList != null) {
@@ -152,6 +152,7 @@ public class Library extends AbstractTableModel {
                 throw new IllegalArgumentException("Указанный читатель не брал эту книгу");
         } else
             throw new IllegalArgumentException("Указанная книга отсутствует в базе");
+        fireTableDataChanged();
         return result;
     }
 
@@ -170,7 +171,7 @@ public class Library extends AbstractTableModel {
         Set<Book> bookList = new HashSet<>();
         for (Map.Entry<Book, List<Record>> entry : dataBase.entrySet()) {
             for (Record record : entry.getValue()) {
-                if (record.getCustomer().equals(customer))
+                if (record.getCustomer().getName().equals(customer.getName()))
                     bookList.add(entry.getKey());
             }
         }
@@ -243,7 +244,14 @@ public class Library extends AbstractTableModel {
     }
 
     public void deleteRecord(Book book, Record record) {
-        dataBase.get(book).remove(record);
+        List<Record> customerList = dataBase.get(book);
+        dataBase.remove(book);
+
+        book.setQty(book.getQty() + 1);
+        customerList.remove(record);
+
+        dataBase.put(book, customerList);
         fireTableDataChanged();
+        saveToFile(sourceFile);
     }
 }

@@ -3,6 +3,7 @@ package com.netcracker.swingui.frames;
 import com.netcracker.swingui.data.Book;
 import com.netcracker.swingui.data.Library;
 import com.netcracker.swingui.data.Record;
+import com.netcracker.swingui.frames.TableChecker;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.GregorianCalendar;

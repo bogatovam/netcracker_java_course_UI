@@ -4,48 +4,40 @@ import com.netcracker.swingui.data.Book;
 import com.netcracker.swingui.data.Library;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 
-public class MainFrame extends JFrame {
-    Library library;
-    JTable table;
+public class MainFrame extends AbstractFrame {
+    private Library library;
+    private JTable table;
 
-    JMenuBar menu;
-    JPanel searchPanel;
-    JPanel buttonsPanel;
-    JScrollPane tablePanel;
+    private JMenuBar menu;
+    private JPanel searchPanel;
+    private JPanel buttonsPanel;
+    private JScrollPane tablePanel;
     Font font = new Font("Verdana", Font.PLAIN, 12);
 
     public MainFrame() {
-        super("Library");
+        super("Библиотека");
 
         setLocation(270, 20);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setPreferredSize(new Dimension(800, 700));
 
-        JPanel mainPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 30));
+        JPanel mainPanel = new JPanel(new GridBagLayout());
 
         menu = createMenu();
         searchPanel = createSearch();
         tablePanel = createTable();
-        buttonsPanel = createButtons();
+        buttonsPanel = createButtons("Выдача книги", "Возврат книги", "Карта читателя");
 
         setJMenuBar(menu);
-        mainPanel.add(searchPanel);
-        mainPanel.add(tablePanel);
-        mainPanel.add(buttonsPanel);
+        addItem(mainPanel, searchPanel, 2, 1, 4, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL);
+        addItem(mainPanel, tablePanel, 2, 2, 2, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
+        addItem(mainPanel, buttonsPanel, 2, 3, 2, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH);
         add(mainPanel, BorderLayout.CENTER);
-        addComponentListener(new ComponentAdapter() {
-            public void componentResized(ComponentEvent componentEvent) {
-                searchPanel.setPreferredSize(new Dimension(getWidth() - 50, 35));
-                tablePanel.setPreferredSize(new Dimension(getWidth() - 50, 3 * getHeight() / 5));
-                buttonsPanel.setPreferredSize(new Dimension(getWidth() - 50, 35));
-                repaint();
-            }
-        });
-
         pack();
         setVisible(true);
     }
@@ -88,35 +80,36 @@ public class MainFrame extends JFrame {
         return menuBar;
     }
 
-    public JPanel createButtons() {
-        JPanel grid = new JPanel(new GridLayout(1, 3, 150, 0));
-        grid.setFont(font);
-        grid.setPreferredSize(new Dimension(700, 30));
-        JButton button1 = new JButton("Выдача книги");
-        JButton button2 = new JButton("Возврат книги");
-        JButton button3 = new JButton("Карта читателя");
+    public void button1ActionListener() {
+        SwingUtilities.invokeLater(() -> new GivingBookFrame(library));
+    }
 
-        button1.addActionListener(e -> SwingUtilities.invokeLater(() -> new GivingBookFrame()));
-        button2.addActionListener(e -> SwingUtilities.invokeLater(() -> new GettingBookFrame()));
-        button3.addActionListener(e -> {
-            String personName = JOptionPane.showInputDialog("Enter person name :");
-            SwingUtilities.invokeLater(() -> new CustomerFrame(library, personName));
-        });
-        grid.add(button1);
-        grid.add(button2);
-        grid.add(button3);
+    public void button2ActionListener() {
+        SwingUtilities.invokeLater(() -> new GettingBookFrame(library));
+    }
 
-        JPanel flow = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        flow.add(grid);
-        return flow;
+    public void button3ActionListener() {
+        String personName = JOptionPane.showInputDialog("Введите имя читателя: ");
+        if (personName.isEmpty() || !personName.matches("^[a-zA-Z]+$")) {
+            JOptionPane.showMessageDialog(null, "Некорректный ввод имени читателя\n" +
+                    "Имя должно быть непустым, не сожержать цифр и начинаться с заглавной буквы");
+            return;
+        } else {
+            if (library.findCustomerByName(personName) == null) {
+                JOptionPane.showMessageDialog(null, "Читатель отсутствует в базе ");
+            } else SwingUtilities.invokeLater(() -> new CustomerFrame(library, personName));
+
+        }
     }
 
     public JScrollPane createTable() {
         library = new Library("result.json");
-        library.addTableModelListener(e->repaint());
         table = new JTable(library);
         table.setFont(font);
         table.setRowHeight(25);
+        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
+        rightRenderer.setHorizontalAlignment(JLabel.LEFT);
+        table.getColumnModel().getColumn(2).setCellRenderer(rightRenderer);
         table.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent mouseEvent) {
                 Point point = mouseEvent.getPoint();
@@ -142,6 +135,16 @@ public class MainFrame extends JFrame {
                 int row = table.rowAtPoint(point);
                 JPopupMenu menu = new JPopupMenu();
                 JMenuItem item = new JMenuItem("Редактировать");
+                JMenuItem item2 = new JMenuItem("Удалить");
+
+                item2.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        Book deleted = library.getBookFromName(table.getValueAt(row, 0).toString());
+                        library.deleteBook(deleted);
+                        library.saveToFile(new File("result.json"));
+                    }
+                });
                 item.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
@@ -152,30 +155,36 @@ public class MainFrame extends JFrame {
                     }
                 });
                 menu.add(item);
+                menu.add(item2);
                 menu.show(mouseEvent.getComponent(), mouseEvent.getX(), mouseEvent.getY());
             }
 
         });
         JScrollPane jScrollPane = new JScrollPane(table);
-        jScrollPane.setPreferredSize(new Dimension(700, 150));
         return jScrollPane;
     }
 
     public JPanel createSearch() {
-        JPanel searchPanel = new JPanel(new FlowLayout());
+        JPanel searchPanel = new JPanel(new GridBagLayout());
         JTextField sField = new JTextField();
         JButton sButton = new JButton("Поиск");
-        sField.setPreferredSize(new Dimension(590, 25));
+        sField.setPreferredSize(new Dimension(300, 25));
         sButton.setPreferredSize(new Dimension(100, 25));
 
         sButton.addActionListener(e -> searchInTable(sField.getText()));
-        searchPanel.add(sField);
-        searchPanel.add(sButton);
+        addItem(searchPanel, sField, 1, 3, 3, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL);
+        addItem(searchPanel, sButton, 5, 3, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL);
+
         return searchPanel;
     }
 
     public void searchInTable(final String q) {
-        table.changeSelection(library.getBooksIndex(q), 1, false, false);
+        int book = library.getBooksIndex(q);
+        if (book < 0)
+            JOptionPane.showMessageDialog(null,
+                    "Книга с таким названием не найдена, попробуйте еще раз ");
+        else
+            table.changeSelection(book, 1, false, false);
     }
 
     public static void main(String[] args) {

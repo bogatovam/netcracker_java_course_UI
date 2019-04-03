@@ -83,18 +83,19 @@ public class Library extends AbstractTableModel {
         return null;
     }
 
+
     public void addBook(Book book) {
         dataBase.computeIfAbsent(book, k -> new LinkedList<Record>());
+        fireTableDataChanged();
     }
 
-    public List<Record> getBook(Book book){
+    public List<Record> getBook(Book book) {
         return dataBase.get(book);
     }
+
     public void deleteBook(Book book) {
-        if (dataBase.get(book).isEmpty())
-            dataBase.remove(book);
-        else
-            throw new IllegalArgumentException(book.toString() + " still has customers");
+        dataBase.remove(book);
+        fireTableDataChanged();
     }
 
     public void changeBook(Book oldBook, Book newBook) {
@@ -104,9 +105,10 @@ public class Library extends AbstractTableModel {
             dataBase.put(newBook, customers);
         } else
             throw new IllegalArgumentException(oldBook.toString() + " doesn't exist in the book base");
+        fireTableDataChanged();
     }
 
-    public boolean giveBookToCustomer(Book book, Customer customer) {
+    public boolean giveBookToCustomer(Book book, Customer customer, Record.State state) {
         List<Record> customerList = dataBase.get(book);
         boolean result = false;
         if (customerList != null) {
@@ -115,13 +117,15 @@ public class Library extends AbstractTableModel {
                 dataBase.remove(book);
 
                 customerList.add(
-                        new Record(customer, Record.State.GOOD, Record.Status.GIVE, new Date()));
+                        new Record(customer, state, Record.Status.GIVE, new GregorianCalendar()));
                 book.setQty(book.getQty() - 1);
 
                 dataBase.put(book, customerList);
             }
         } else
             throw new IllegalArgumentException(book + " doesn't exist in the book base");
+        saveToFile(new File(sourceFileName));
+        fireTableDataChanged();
         return result;
     }
 
@@ -133,7 +137,7 @@ public class Library extends AbstractTableModel {
                 if (record.getCustomer().equals(customer)) {
                     record.setState(state);
                     record.setStatus(Record.Status.GET);
-                    record.setEndDate(new Date());
+                    record.setEndDate(new GregorianCalendar());
                 }
             }
             if (result) {
@@ -141,28 +145,28 @@ public class Library extends AbstractTableModel {
                 book.setQty(book.getQty() + 1);
                 dataBase.put(book, customerList);
             } else
-                throw new IllegalArgumentException(customer + " didn't take this book");
+                throw new IllegalArgumentException("Данный читатель не брал эту книгу");
         } else
-            throw new IllegalArgumentException(book + " doesn't exist in the book base");
+            throw new IllegalArgumentException("Данная книга отсутствует в базе");
         return result;
     }
 
     public Customer findCustomerByName(final String customer) {
         Customer find = null;
         for (Map.Entry<Book, List<Record>> entry : dataBase.entrySet()) {
-            for(Record record: entry.getValue()){
-                if(record.getCustomer().getName().equals(customer))
+            for (Record record : entry.getValue()) {
+                if (record.getCustomer().getName().equals(customer))
                     return record.getCustomer();
             }
         }
         return find;
     }
 
-    public Object[] findAllCustomersBooks(Customer customer){
+    public Object[] findAllCustomersBooks(Customer customer) {
         Set<Book> bookList = new HashSet<>();
         for (Map.Entry<Book, List<Record>> entry : dataBase.entrySet()) {
-            for(Record record: entry.getValue()){
-                if(record.getCustomer().equals(customer))
+            for (Record record : entry.getValue()) {
+                if (record.getCustomer().equals(customer))
                     bookList.add(entry.getKey());
             }
         }
@@ -190,16 +194,18 @@ public class Library extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         Map.Entry<Book, List<Record>> current = getBookFromIndex(rowIndex);
-        // if(current!=null)
-        switch (columnIndex) {
-            case 0:
-                return current.getKey().getName();
-            case 1:
-                return current.getKey().getAuthorNames();
-            case 2:
-                return current.getKey().getQty();
-            case 3:
-                return current.getValue().get(current.getValue().size() - 1).getCustomer().getName();
+        if (current != null) {
+            switch (columnIndex) {
+                case 0:
+                    return current.getKey().getName();
+                case 1:
+                    return current.getKey().getAuthors().getName();
+                case 2:
+                    return current.getKey().getQty();
+                case 3:
+                    return current.getValue().isEmpty() ? "Нет" :
+                            current.getValue().get(current.getValue().size() - 1).getCustomer().getName();
+            }
         }
         return null;
     }
@@ -232,44 +238,4 @@ public class Library extends AbstractTableModel {
         return Object.class;
     }
 
-    public static void main(String[] args) {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.setVisibility(PropertyAccessor.FIELD, ANY);
-        Map<Book, List<Record>> lib = new HashMap<Book, List<Record>>();
-        Author[][] authors = new Author[][]{
-                new Author[]{
-                        new Author("A. A. Pushkin", "", 'M')
-                },
-                new Author[]{
-                        new Author("A. N. Strugatsky", "", 'M'),
-                        new Author("B. N. Strugatsky", "", 'M')
-                },
-                new Author[]{
-                        new Author("R. D. Bradbury", "", 'M')
-                },
-                new Author[]{
-                        new Author("R. D. Bradbury", "", 'M')
-                }
-        };
-        Book[] books = new Book[]{
-                new Book("Eugene Onegin", authors[0], 200),
-                new Book("Eugene Onegin", authors[0], 200),
-                new Book("Monday starts Saturday", authors[1], 500),
-                new Book("451 degrees Fahrenheit", authors[2], 10),
-                new Book("Wine from dandelions", authors[2], 11)
-        };
-        Customer[] customers = new Customer[]{
-                new Customer("I :)", 'F', "")
-        };
-        List<Record> tmp = new LinkedList<Record>();
-        tmp.add(new Record(customers[0], Record.State.GOOD, Record.Status.GIVE, new Date()));
-
-        lib.put(books[0], tmp);
-        try {
-            System.out.println(mapper.writeValueAsString(lib));
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-
-    }
 }

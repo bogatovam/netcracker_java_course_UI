@@ -5,6 +5,7 @@ import javafx.util.Pair;
 import sun.util.calendar.BaseCalendar;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 public class Record {
@@ -25,11 +26,13 @@ public class Record {
     private Customer customer;
     private State state;
     private Status status;
-    private Date beginDate;
-    private Date endDate;
+    private GregorianCalendar beginDate;
+    private GregorianCalendar endDate;
 
-    public Record(){}
-    public Record(Customer customer, State state, Status status,Date date) {
+    public Record() {
+    }
+
+    public Record(Customer customer, State state, Status status, GregorianCalendar date) {
         this.customer = customer;
         this.state = state;
         this.status = status;
@@ -60,19 +63,19 @@ public class Record {
         this.status = status;
     }
 
-    public Date getBeginDate() {
+    public GregorianCalendar getBeginDate() {
         return beginDate;
     }
 
-    public void setBeginDate(Date beginDate) {
+    public void setBeginDate(GregorianCalendar beginDate) {
         this.beginDate = beginDate;
     }
 
-    public Date getEndDate() {
+    public GregorianCalendar getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(GregorianCalendar endDate) {
         this.endDate = endDate;
     }
 

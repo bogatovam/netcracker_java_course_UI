@@ -1,1 +1,1 @@
-{"{\"name\":\"Винишко\", \"authors\":[{\"name\":\"R. D. Bradbury\", \"email\":\"\", \"gender\":\"M\"}], \"qty\":\"201\"}":[{"customer":{"name":"I :)","gender":"F","phone":"","email":null,"address":null},"state":"GOOD","status":"GIVE","beginDate":1554136872884,"endDate":null}]}
+{"{\"name\":\"Вино из одуанчиков\", \"authors\":{\"name\":\"Рей Бредберри\", \"email\":\"нет\", \"gender\":\"M\"}, \"qty\":\"40\"}":[],"{\"name\":\"Понедельник начинается в субботу\", \"authors\":{\"name\":\"Стругацкие\", \"email\":\"нет\", \"gender\":\"M\"}, \"qty\":\"3\"}":[]}
